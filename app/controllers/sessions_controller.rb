@@ -3,6 +3,9 @@ class SessionsController < ApplicationController
 	before_filter :authenticate_user, :except => [:index, :login, :login_attempt, :logout]
 	before_filter :save_login_state, :only => [:index, :login, :login_attempt]
 
+	def admin
+		#Admin Page
+	end
 	def home
 		#Home Page
 	end
@@ -24,7 +27,11 @@ class SessionsController < ApplicationController
 		if authorized_user
 			session[:user_id] = authorized_user.id
 			flash[:notice] = "Wow Welcome again, you logged in as #{authorized_user.username}"
-			redirect_to(:action => 'home')
+			if authorized_user.is_admin == 1
+				redirect_to(:action => 'admin')
+			else
+				redirect_to(:action => 'home')
+			end
 
 
 		else
