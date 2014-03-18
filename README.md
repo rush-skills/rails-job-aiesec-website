@@ -1,4 +1,5 @@
-rails_simple_user_auth
-======================
+ror1
+====
 
-Repository accompanying User/Password Authenticaion from Scratch article (http://rubysource.com/?p=3611)
+ROR Website
+
