@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20120319110639) do
     t.string   "encrypted_password"
     t.string   "salt"
     t.integer  "is_admin"
+    t.text     "app_for"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
