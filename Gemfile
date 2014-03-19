@@ -36,3 +36,7 @@ gem 'jquery-rails'
 # gem 'capistrano'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end

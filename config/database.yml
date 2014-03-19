@@ -34,12 +34,12 @@ test:
   port: 3306
 
 production:
-  adapter: 'mysql2'
+  adapter: 'postgresql'
   encoding: utf8
   reconnect: false
-  database: test3
+  database: d7ef9ggir78ihr
   pool: 5
-  username: root
-  password:
-  host: 127.0.0.1
-  port: 3306
+  username: dspamfsimbhgqo
+  password: BCqqDOrQI9SwcQ6mGTwkkGKTf2
+  host: ec2-54-204-43-200.compute-1.amazonaws.com
+  port: 5432
