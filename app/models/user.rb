@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-
+  serialize :app_for, Array
   attr_accessor :password
 
   before_save :encrypt_password
@@ -12,8 +12,8 @@ class User < ActiveRecord::Base
   #Only on Create so other actions like update password attribute can be nil
   validates_length_of :password, :in => 6..20, :on => :create
 
-  attr_accessible :username, :email, :password, :password_confirmation
-  serialize :app_for
+  attr_accessible :username, :email, :password, :password_confirmation, :app_for
+  
 
   def self.authenticate(username_or_email="", login_password="")
 

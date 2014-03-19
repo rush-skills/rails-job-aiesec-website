@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  project_name: MyString
+  country: MyString
+  start_date: MyString
+  end_date: MyString
+  brief_description: MyText
+  job_description: MyText
+  work_information: MyText
+  skills: MyText
+  language: MyString
+  other_details: MyText
+  applicants: MyText
+
+two:
+  project_name: MyString
+  country: MyString
+  start_date: MyString
+  end_date: MyString
+  brief_description: MyText
+  job_description: MyText
+  work_information: MyText
+  skills: MyText
+  language: MyString
+  other_details: MyText
+  applicants: MyText

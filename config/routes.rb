@@ -1,5 +1,7 @@
 UserAuth::Application.routes.draw do
 
+  resources :jobs
+
   match ':controller(/:action(/:id))(.:format)'
   root :to => 'sessions#login'
   match "signup", :to => "users#new"

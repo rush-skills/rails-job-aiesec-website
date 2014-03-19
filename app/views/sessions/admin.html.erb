@@ -1,1 +1,4 @@
 <h2 class='User_Header'><%=@current_user.username%> Admin <h2>
+<% @current_user.app_for.each do |x| %>
+<%=x%>
+<% end %>

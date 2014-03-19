@@ -9,6 +9,7 @@
 
    def create
     	@user = User.new(params[:user])
+		@user.app_for = []
     	if @user.save
     		flash[:notice] = "You Signed up successfully"
         flash[:color]= "valid"
