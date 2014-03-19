@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
 
 	def admin
 		#Admin Page
+		@activities = PublicActivity::Activity.all
 	end
 	def home
 		#Home Page
@@ -47,6 +48,13 @@ class SessionsController < ApplicationController
 		unless u.app_for.include?(appfor)
 			u.app_for.push(appfor)
 			u.save!
+			flash[:notice] = "You have successfully applied up for this job"
+        	flash[:color]= "valid"
+			redirect_to(:back)	
+		else
+			flash[:notice] = "You have already applied up for this job"
+        	flash[:color]= "invalid"
+			redirect_to(:back)	
 		end
 		unless job.applicants.include?(u.id)
 			job.applicants.push(u.id)

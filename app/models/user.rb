@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  
+
   serialize :app_for, Array
   attr_accessor :password
 

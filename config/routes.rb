@@ -1,7 +1,9 @@
 UserAuth::Application.routes.draw do
 
-  resources :jobs
+ 
 
+  resources :jobs
+  #resources :activities
   match ':controller(/:action(/:id))(.:format)'
   root :to => 'sessions#login'
   match "signup", :to => "users#new"
@@ -10,9 +12,10 @@ UserAuth::Application.routes.draw do
   match "home", :to => "sessions#home"
   match "profile", :to => "sessions#profile"
   match "setting", :to => "sessions#setting"
-  match "admin", :to => "sessions#admin"
+  match "admin", :to => "activities#index"
   match "jobs_user", :to => "jobs#index_user"
   match "apply/id", :to => "sessions#apply"
+  match '/users/:id', :to => 'users#show', :as => :user
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
