@@ -9,16 +9,22 @@
 <body>
 	<div class="Main_Header">
 		<h1>Title</h1>
-		<%unless session[:user_id]%>
+		<%if ! session[:user_id]%>
 			<ul class="nav">
 				<li><%= link_to :Signup , :signup, class: "nav_links"%></li>|
 				<li><%= link_to :Login , :login, class: "nav_links"%></li>	
+			</ul>
+		<%elsif User.find(session[:user_id]).is_admin == 1%>
+			<ul class="nav">
+				<li><%= link_to :Home , :admin, class: "nav_links" %> |</li>
+				<li><%= link_to :Jobs , :jobs, class: "nav_links" %> |</li>
+				<li><%= link_to :Logout , :logout, class: "nav_links" %></li>	
 			</ul>
 		<%else%>
 			<ul class="nav">
 				<li><%= link_to :Home , :home, class: "nav_links" %> |</li>
 				<li><%= link_to :Profile , :profile, class: "nav_links" %> |</li>
-				<li><%= link_to :Setting , :setting, class: "nav_links" %> |</li>
+				<li><%= link_to :Jobs , :jobs_user, class: "nav_links" %> |</li>
 				<li><%= link_to :Logout , :logout, class: "nav_links" %></li>	
 			</ul>
 		<%end%>

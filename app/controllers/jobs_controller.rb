@@ -1,4 +1,6 @@
 class JobsController < ApplicationController
+  before_filter :authenticate_user
+  
   # GET /jobs
   # GET /jobs.json
   def index
@@ -9,7 +11,16 @@ class JobsController < ApplicationController
       format.json { render json: @jobs }
     end
   end
+  
+  # GET /jobs_user
+  def index_user
+	@jobs = Job.all
 
+    respond_to do |format|
+      format.html # index_user.html.erb
+      format.json { render json: @jobs }
+    end
+  end
   # GET /jobs/1
   # GET /jobs/1.json
   def show
@@ -79,5 +90,8 @@ class JobsController < ApplicationController
       format.html { redirect_to jobs_url }
       format.json { head :no_content }
     end
+  end
+  def apply
+  
   end
 end

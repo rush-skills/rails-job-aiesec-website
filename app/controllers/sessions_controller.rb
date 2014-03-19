@@ -40,7 +40,19 @@ class SessionsController < ApplicationController
 			render "login"	
 		end
 	end
-
+	def apply
+		u = User.find(session[:user_id])
+		job = Job.find_by_id(params[:id])
+		appfor = job.id
+		unless u.app_for.include?(appfor)
+			u.app_for.push(appfor)
+			u.save!
+		end
+		unless job.applicants.include?(u.id)
+			job.applicants.push(u.id)
+			job.save!
+		end
+	end
 	def logout
 		session[:user_id] = nil
 		redirect_to :action => 'login'

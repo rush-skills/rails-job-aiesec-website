@@ -11,6 +11,8 @@ UserAuth::Application.routes.draw do
   match "profile", :to => "sessions#profile"
   match "setting", :to => "sessions#setting"
   match "admin", :to => "sessions#admin"
+  match "jobs_user", :to => "jobs#index_user"
+  match "apply/id", :to => "sessions#apply"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

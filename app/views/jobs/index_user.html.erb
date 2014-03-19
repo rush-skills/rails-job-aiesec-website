@@ -1,6 +1,6 @@
 <h1>Listing jobs</h1>
 
-<table id = "jobs">
+<table id="jobs">
   <tr>
     <th>Project name</th>
     <th>Country</th>
@@ -12,10 +12,8 @@
     <th>Skills</th>
     <th>Language</th>
     <th>Other details</th>
-    <th>Applicants</th>
     <th></th>
-    <th></th>
-    <th></th>
+	<th></th>
   </tr>
 
 <% @jobs.each do |job| %>
@@ -30,14 +28,11 @@
     <td><%= job.skills %></td>
     <td><%= job.language %></td>
     <td><%= job.other_details %></td>
-    <td><%= job.applicants %></td>
     <td><%= link_to 'Show', job %></td>
-    <td><%= link_to 'Edit', edit_job_path(job) %></td>
-    <td><%= link_to 'Destroy', job, confirm: 'Are you sure?', method: :delete %></td>
+	<td><%= link_to 'Apply',  controller: "sessions", action: "apply", id: job  %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Job', new_job_path %>
