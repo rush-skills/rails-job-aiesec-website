@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
           return false
         end
       else
+        redirect_to(:controller => 'sessions', :action => 'home')
         return false
       end
   end
