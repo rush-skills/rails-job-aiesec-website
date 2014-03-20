@@ -10,9 +10,14 @@ class ApplicationController < ActionController::Base
   protected
 
   def auth_admin
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]
-      if @current_user.is_admin
-        return true
+      if session[:user_id]
+        u = User.find(session[:user_id])
+        if u.is_admin == 1
+          return true
+        else
+          redirect_to(:controller => 'sessions', :action => 'home')
+          return false
+        end
       else
         return false
       end
