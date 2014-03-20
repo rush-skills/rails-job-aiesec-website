@@ -13,7 +13,7 @@ class CreateJobs < ActiveRecord::Migration
       t.text :other_details
       t.text :applicants
 
-      t.timestamps
+      t.timestamps 
     end
   end
 end

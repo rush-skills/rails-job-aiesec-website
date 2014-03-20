@@ -1,1 +1,13 @@
-<h2 class='User_Header'><%=@current_user.username%> Profile <h2>
+<h2 class='User_Header'><%=@ofuser.username%> Profile </h2>
+	<h3>Name: <%=@ofuser.name%> </h3>
+	<h3>User Name: <%=@ofuser.username%> </h3>
+	<h3>Contact Number: <%=@ofuser.phone%> </h3>
+	<h3>Ep ID: <%=@ofuser.ep_id%> </h3>
+	<h3>Email ID: <%=@ofuser.email%> </h3>
+	<h2>Listing of all jobs applied</h4>
+	<% @job_ar.each do |x|%>
+	<h4>Job name: <%=x.project_name%> </h4>
+	<h4>Job Country: <%=x.country%> </h4>
+	<h4>End date: <%=x.end_date%> </h4>
+	<h4> ----- </h4>
+	<% end %>

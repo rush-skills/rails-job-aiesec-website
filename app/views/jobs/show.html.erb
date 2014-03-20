@@ -50,10 +50,6 @@
   <%= @job.other_details %>
 </p>
 
-<p>
-  <b>Applicants:</b>
-  <%= @job.applicants %>
-</p>
 <% if @current_user.is_admin %>
 <%= link_to 'Back', :controller => "jobs", :action => "index" %>
 <% else %>

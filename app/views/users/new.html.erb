@@ -2,7 +2,12 @@
 <div class= "Sign_Form">
   <h1>Sign Up</h1>
   <%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
-
+    <p>          
+      Ep ID:</br> <%= f.text_field :ep_id%>
+    </p>
+    <p>          
+      Name:</br> <%= f.text_field :name%>
+    </p>
     <p>          
       Username:</br> <%= f.text_field :username%>
     </p>
@@ -10,7 +15,9 @@
     <p>
       Email:</br> <%= f.text_field :email%>
     </p>
-
+    <p>
+      Contact Number:</br> <%= f.text_field :phone%>
+    </p>
     <p>      
       Password:</br> <%= f.password_field :password%>
     </p>

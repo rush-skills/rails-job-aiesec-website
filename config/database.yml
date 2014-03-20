@@ -12,12 +12,11 @@ development:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: d7ef9ggir78ihr
-  username: dspamfsimbhgqo
-  password: BCqqDOrQI9SwcQ6mGTwkkGKTf2
-  host: ec2-54-204-43-200.compute-1.amazonaws.com
-  port: 5432
-
+  database: d8npufflirqnhe
+  username: jposbnkhwokqjx
+  password: lkSsTgpMfNG-LsKgsSyJ9R9x2-
+  host: ec2-54-225-101-4.compute-1.amazonaws.com
+  port: 5432 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
@@ -25,18 +24,18 @@ test:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: d7ef9ggir78ihr
-  username: dspamfsimbhgqo
-  password: BCqqDOrQI9SwcQ6mGTwkkGKTf2
-  host: ec2-54-204-43-200.compute-1.amazonaws.com
+  database: d8npufflirqnhe
+  username: jposbnkhwokqjx
+  password: lkSsTgpMfNG-LsKgsSyJ9R9x2-
+  host: ec2-54-225-101-4.compute-1.amazonaws.com
   port: 5432
 
 production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: d7ef9ggir78ihr
-  username: dspamfsimbhgqo
-  password: BCqqDOrQI9SwcQ6mGTwkkGKTf2
-  host: ec2-54-204-43-200.compute-1.amazonaws.com
+  database: d8npufflirqnhe
+  username: jposbnkhwokqjx
+  password: lkSsTgpMfNG-LsKgsSyJ9R9x2-
+  host: ec2-54-225-101-4.compute-1.amazonaws.com
   port: 5432

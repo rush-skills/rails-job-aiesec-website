@@ -12,6 +12,16 @@ class SessionsController < ApplicationController
 	end
 
 	def profile
+		if params[:id]
+			@ofuser = User.find(params[:id])
+		else
+			@ofuser = User.find(session[:user_id])
+		end
+		@job_ar = []
+		@ofuser.app_for.each do |x|
+			y = Job.find(:first, :conditions => {:id => x})
+			@job_ar.push(y) unless y.nil?
+		end
 		#Profile Page
 	end
 
