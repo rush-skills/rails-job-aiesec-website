@@ -54,5 +54,8 @@
   <b>Applicants:</b>
   <%= @job.applicants %>
 </p>
-
-<%= link_to 'Back', jobs_path %>
+<% if @current_user.is_admin %>
+<%= link_to 'Back', :controller => "jobs", :action => "index" %>
+<% else %>
+<%= link_to 'Back', :controller => "jobs", :action => "index_user" %>
+<% end %>

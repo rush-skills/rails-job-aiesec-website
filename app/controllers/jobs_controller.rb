@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   before_filter :authenticate_user
-  
+  before_filter :auth_admin, :only => [:index, :new, :edit, :create, :update]
+
   # GET /jobs
   # GET /jobs.json
   def index
