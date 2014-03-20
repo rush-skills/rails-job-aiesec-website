@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
 			session[:user_id] = authorized_user.id
 			flash[:notice] = "Wow Welcome again, you logged in as #{authorized_user.username}"
 			if authorized_user.is_admin == 1
-				redirect_to(:controller => activities, :action => 'index')
+				redirect_to(:controller => 'activities', :action => 'index')
 			else
 				redirect_to(:action => 'home')
 			end
