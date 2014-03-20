@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   #Only on Create so other actions like update password attribute can be nil
   validates_length_of :password, :in => 6..20, :on => :create
 
-  attr_accessible :username, :email, :password, :password_confirmation, :app_for
+  attr_accessible :username, :email, :password, :password_confirmation, :app_for, :is_admin
   
 
   def self.authenticate(username_or_email="", login_password="")
