@@ -161,6 +161,7 @@ textarea {
 }
 body{
 	background-image: url(texture.png);
+	color: #FFFFFF;
 }
 .flat-table {
 		margin-bottom: 20px;
