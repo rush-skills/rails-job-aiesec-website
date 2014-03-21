@@ -2,47 +2,79 @@
 <html>
 <head>
   <title>Title</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+    
+   <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "application"%>
   <%= csrf_meta_tags %>
+   <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+   <![endif]-->
+
 </head>
 <body>
-	<div class="Main_Header">
-		<h1>Title</h1>
-		<%if ! session[:user_id]%>
-			<ul class="nav">
-				<li><%= link_to :Signup , :signup, class: "nav_links"%></li>|
-				<li><%= link_to :Login , :login, class: "nav_links"%></li>	
-			</ul>
-		<%elsif User.find(session[:user_id]).is_admin == 1%>
-			<ul class="nav">
-				<li><%= link_to :Home , :admin, class: "nav_links" %> |</li>
-				<li><%= link_to :Jobs , :jobs, class: "nav_links" %> |</li>
-				<li><%= link_to :Logout , :logout, class: "nav_links" %></li>	
-			</ul>
-		<%else%>
-			<ul class="nav">
-				<li><%= link_to :Home , :home, class: "nav_links" %> |</li>
-				<li><%= link_to :Profile , :profile, class: "nav_links" %> |</li>
-				<li><%= link_to :Jobs , :jobs_user, class: "nav_links" %> |</li>
-				<li><%= link_to :Logout , :logout, class: "nav_links" %></li>	
-			</ul>
-		<%end%>
+	<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+		<div class="navbar-inner">
+	    	<div class="container ">
+	      		<div class="navbar-header">
+	      			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	      			    <span class="sr-only">Toggle navigation</span>
+		            	<span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+	          		</button>
+	          		<a class="navbar-brand" id="logo" href="login">Project name</a>
+	       		</div>
+       		 	
+	        	<div class="collapse navbar-collapse">
+	        		<div>
+			      		<p class="navbar-text cuscol">Some Text</p>
+			  		</div>
+					<%if ! session[:user_id]%>
+						<ul class="nav navbar-nav pull-right">
+							<li><%= link_to :Signup , :signup, :class => "cuscol"%></li>
+							<li><%= link_to :Login , :login, :class => "cuscol"%></li>	
+						</ul>
+					<%elsif User.find(session[:user_id]).is_admin == 1%>
+						<ul class="nav navbar-nav pull-right">
+							<li><%= link_to :Home , :admin, :class => "cuscol"%></li>
+							<li><%= link_to :Jobs , :jobs, :class => "cuscol"%></li>
+							<li><%= link_to :Logout , :logout, :class => "cuscol"%></li>	
+						</ul>
+					<%else%>
+						<ul class="nav navbar-nav pull-right">
+							<li><%= link_to :Home , :home, :class => "cuscol"%></li>
+							<li><%= link_to :Profile , :profile, :class => "cuscol"%></li>
+							<li><%= link_to :Jobs , :jobs_user, :class => "cuscol"%></li>
+							<li><%= link_to :Logout , :logout, :class => "cuscol"%></li>	
+						</ul>
+					<%end%>
+				</div>
+	    	</div>
+	    </div>
 	</div>
-	<% if flash[:color]== "valid" %>
-		<div class="valid_notice">
-			<p><%= flash[:notice]%></p>
-		</div>
-	<% elsif flash[:color]== "invalid"%>
-		<div class="invalid_notice">
-			<p><%=flash[:notice]%></p>
-		</div>
-	<%else%>
-		<div class="notice">
-			<p><%=flash[:notice]%></p>
-		</div>
-	<%end%>
-<%= yield %>
+		
+	<div class="container marketing">
+		<% if flash[:color]== "valid" %>
+			<div class="alert alert-success">
+				<p><%= flash[:notice]%></p>
+			</div>
+		<% elsif flash[:color]== "invalid"%>
+			<div class="alert alert-danger">
+				<p><%=flash[:notice]%></p>
+			</div>
+		<%else%>
+			<div class="notice">
+				<p><%=flash[:notice]%></p>
+			</div>
+		<%end%>
+		<%= yield %>
 
+		<hr class="featurette-divider">
+		<footer>
+		    <p class="pull-right"><a href="#">Back to top</a></p>
+		    <p>&copy; 2014 Company, Inc. &middot; </p>
+		</footer>
+
+	</div>
 </body>
 </html>

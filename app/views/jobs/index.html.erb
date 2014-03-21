@@ -1,43 +1,35 @@
-<h1>Listing jobs</h1>
+<h1 class="center" id="ajh">List of all the active jobs</h1>
+<br/>
 
-<table id = "jobs">
+<table class="flat-table flat-table-3 center">
+    <thead>
   <tr>
     <th>Project name</th>
     <th>Country</th>
     <th>Start date</th>
     <th>End date</th>
-    <th>Brief description</th>
-    <th>Job description</th>
-    <th>Work information</th>
-    <th>Skills</th>
     <th>Language</th>
-    <th>Other details</th>
-    <th>Applicants</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
-
+  </thead>
+  <tbody>
 <% @jobs.each do |job| %>
   <tr>
     <td><%= job.project_name %></td>
     <td><%= job.country %></td>
     <td><%= job.start_date %></td>
     <td><%= job.end_date %></td>
-    <td><%= job.brief_description %></td>
-    <td><%= job.job_description %></td>
-    <td><%= job.work_information %></td>
-    <td><%= job.skills %></td>
     <td><%= job.language %></td>
-    <td><%= job.other_details %></td>
-    <td><%= job.applicants %></td>
-    <td><%= link_to 'Show', job %></td>
-    <td><%= link_to 'Edit', edit_job_path(job) %></td>
-    <td><%= link_to 'Destroy', job, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', job, :class => "btn btn-info" %></td>
+    <td><%= link_to 'Edit', edit_job_path(job), :class => "btn btn-warning" %></td>
+    <td><%= link_to 'Destroy', job, confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
 
-<%= link_to 'New Job', new_job_path %>
+<%= link_to 'New Job', new_job_path, :class => "btn btn-primary center" %>

@@ -1,5 +1,14 @@
-body{
-	background-color: #C4C1BD;
+/*
+*= require bootstrap
+*= require bootstrap-theme
+*/
+@font-face {
+font-family: 'Glyphicons Halflings';
+src: url('../assets/glyphicons-halflings-regular.eot');
+src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
+url('../assets/glyphicons-halflings-regular.woff') format('woff'), 
+url('../assets/glyphicons-halflings-regular.ttf') format('truetype'), 
+url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .Sign_Form{
 	text-align: center;
@@ -39,21 +48,7 @@ body{
 	text-indent:px;
 }
 
-.nav{
-	list-style-type: none;
-	float: right;
-	color:#C4C1BD;
 
-}
-.nav li{
-	display: inline;
-	margin-right:5px;
-
-}
-.nav_links{
-	color: #C4C1BD;
-	text-decoration: none;
-} 
 
 .notice, .valid_notice, .invalid_notice{
 	height:35px;
@@ -114,3 +109,109 @@ color:#ffffff;
 color:#000000;
 background-color:#EAF2D3;
 }
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 2em;
+  color: #52be7f;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 13px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+#logo:hover {
+  color: #100818;
+  text-decoration: none;
+}
+.cuscol {
+	color: #52be7f !important;
+}
+.marketing {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.featurette-divider {
+  margin: 80px 0;
+  border-top: 1px solid #52be7f; /* Space out the Bootstrap <hr> more */
+}
+body{
+	background-image: url(texture.png);
+}
+.flat-table {
+		margin-bottom: 20px;
+		border-collapse:collapse;
+		font-family: 'Lato', Calibri, Arial, sans-serif;
+		border: none;
+                border-radius: 3px;
+               -webkit-border-radius: 3px;
+               -moz-border-radius: 3px;
+	}
+	.flat-table th, .flat-table td {
+		box-shadow: inset 0 -1px rgba(0,0,0,0.25), 
+			inset 0 1px rgba(0,0,0,0.25);
+	}
+	.flat-table th {
+		font-weight: normal;
+		-webkit-font-smoothing: antialiased;
+		padding: 1em;
+		color: rgba(0,0,0,0.45);
+		text-shadow: 0 0 1px rgba(0,0,0,0.1);
+		font-size: 1.5em;
+	}
+	.flat-table td {
+		color: #f7f7f7;
+		padding: 0.7em 1em 0.7em 1.15em;
+		text-shadow: 0 0 1px rgba(255,255,255,0.1);
+		font-size: 1.4em;
+	}
+	.flat-table tr {
+		-webkit-transition: background 0.3s, box-shadow 0.3s;
+		-moz-transition: background 0.3s, box-shadow 0.3s;
+		transition: background 0.3s, box-shadow 0.3s;
+	}
+	.flat-table-1 {
+		background: #336ca6;
+	}
+	.flat-table-1 tr:hover {
+		background: rgba(0,0,0,0.19);
+	}
+	.flat-table-2 tr:hover {
+		background: rgba(0,0,0,0.1);
+	}
+	.flat-table-2 {
+		background: #f06060;
+	}
+	.flat-table-3 {
+		background: #52be7f;
+	}
+	.flat-table-3 tr:hover {
+		background: rgba(0,0,0,0.1);
+	}
+	table {
+    margin: 0 auto; /* or margin: 0 auto 0 auto */
+  }
