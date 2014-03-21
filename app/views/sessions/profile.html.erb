@@ -5,9 +5,11 @@
 	<h3>Ep ID: <%=@ofuser.ep_id%> </h3>
 	<h3>Email ID: <%=@ofuser.email%> </h3>
 	<h2>Listing of all jobs applied</h4>
-	<% @job_ar.each do |x|%>
+	<% for i in 0...@job_ar.length()%>
+	<% x = @job_ar[i] %>
 	<h4>Job name: <%=x.project_name%> </h4>
 	<h4>Job Country: <%=x.country%> </h4>
 	<h4>End date: <%=x.end_date%> </h4>
+	<h4>Apply date: <%=@appdate[i]%> </h4>
 	<h4> ----- </h4>
 	<% end %>

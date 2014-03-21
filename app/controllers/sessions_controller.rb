@@ -18,9 +18,23 @@ class SessionsController < ApplicationController
 			@ofuser = User.find(session[:user_id])
 		end
 		@job_ar = []
+		@appdate =[]
+		cond = false
 		@ofuser.app_for.each do |x|
 			y = Job.find(:first, :conditions => {:id => x})
 			@job_ar.push(y) unless y.nil?
+			k = y.applicants.length() unless y.nil?
+			k = y.applicants.length() if y.nil?
+			for i in 0...k
+				if y.applicants[i] == @ofuser.id
+					@appdate.push(y.apply_date[i])
+					cond = true
+					break
+				end
+			end
+			unless cond
+				@appdate.push("Not Found")
+			end
 		end
 		#Profile Page
 	end
@@ -57,6 +71,7 @@ class SessionsController < ApplicationController
 		appfor = job.id
 		unless u.app_for.include?(appfor)
 			u.app_for.push(appfor)
+			
 			u.save!
 			flash[:notice] = "You have successfully applied up for this job"
         	flash[:color]= "valid"
@@ -68,6 +83,8 @@ class SessionsController < ApplicationController
 		end
 		unless job.applicants.include?(u.id)
 			job.applicants.push(u.id)
+			job.apply_date.push(Date.today.to_s)
+
 			job.save!
 		end
 	end

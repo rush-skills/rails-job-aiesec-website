@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140319140433) do
+ActiveRecord::Schema.define(:version => 20140321092305) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20140319140433) do
     t.text     "applicants"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.text     "apply_date"
   end
 
   create_table "users", :force => true do |t|
@@ -53,9 +54,6 @@ ActiveRecord::Schema.define(:version => 20140319140433) do
     t.string   "salt"
     t.integer  "is_admin"
     t.text     "app_for"
-    t.string   "name"
-    t.string   "ep_id"
-    t.string   "phone"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
