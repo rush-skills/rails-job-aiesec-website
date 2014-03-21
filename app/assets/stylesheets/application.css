@@ -215,3 +215,9 @@ body{
 	table {
     margin: 0 auto; /* or margin: 0 auto 0 auto */
   }
+  	#ajh{
+  		color: #EB1919;
+  	}
+  	.center1{
+  		margin: 0 auto 0 auto;
+  	}

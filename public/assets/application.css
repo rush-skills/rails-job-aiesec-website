@@ -6291,11 +6291,11 @@ textarea {
   padding-left: 15px;
 }
 .featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin: 80px 0;
+  border-top: 1px solid #52be7f; /* Space out the Bootstrap <hr> more */
 }
 body{
 	background-image: url(texture.png);
-	color: #52be7f;
 }
 .flat-table {
 		margin-bottom: 20px;
@@ -6347,3 +6347,12 @@ body{
 	.flat-table-3 tr:hover {
 		background: rgba(0,0,0,0.1);
 	}
+	table {
+    margin: 0 auto; /* or margin: 0 auto 0 auto */
+  }
+  	#ajh{
+  		color: #EB1919;
+  	}
+  	.center1{
+  		margin: 0 auto;
+  	}
