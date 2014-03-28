@@ -1,4 +1,4 @@
-<h1 class="center" id="ajh">List of all the active jobs</h1>
+<h1 class="center" id="ajh">List of all the active Projects</h1>
 <br/>
 
 <table class="flat-table flat-table-3 center">
@@ -21,6 +21,7 @@
     <td><%= job.end_date %></td>
     <td><%= job.language %></td>
     <td><%= link_to 'Show', job, :class => "btn btn-info" %></td>
+    <td><%= link_to 'Apply',  {controller: "sessions", action: "apply", id: job }, :class => "btn btn-success" %></td>
   </tr>
 <% end %>
 </tbody>

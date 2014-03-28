@@ -11,7 +11,7 @@
 
    def create
     	@user = User.new(params[:user])
-		@user.app_for = []
+		  @user.app_for = []
     	if @user.save
         Notifier.send_signup_email(@user).deliver
     		flash[:notice] = "You Signed up successfully"

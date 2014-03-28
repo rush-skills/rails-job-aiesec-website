@@ -54,6 +54,9 @@ ActiveRecord::Schema.define(:version => 20140321092305) do
     t.string   "salt"
     t.integer  "is_admin"
     t.text     "app_for"
+    t.string   "name"
+    t.string   "ep_id"
+    t.string   "phone"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end

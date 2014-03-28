@@ -1,32 +1,32 @@
-<% @page_title = "UserAuth | Signup" -%>
-<div class= "Sign_Form">
+<div class="container center">
+<div class= "col-md-4 center col-md-offset-4">
   <h1>Sign Up</h1>
   <%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
     <p>          
-      Ep ID:</br> <%= f.text_field :ep_id%>
+       <%= f.text_field :ep_id,{:class => "form-control",:placeholder => "Ep ID",:required => true}%>
     </p>
     <p>          
-      Name:</br> <%= f.text_field :name%>
+       <%= f.text_field :name,{:class => "form-control",:placeholder => "Name",:required => true}%>
     </p>
     <p>          
-      Username:</br> <%= f.text_field :username%>
+      <%= f.text_field :username,{:class => "form-control",:placeholder => "Username",:required => true}%>
     </p>
 
     <p>
-      Email:</br> <%= f.text_field :email%>
+       <%= f.text_field :email,{:class => "form-control",:placeholder => "Email",:required => true}%>
     </p>
     <p>
-      Contact Number:</br> <%= f.text_field :phone%>
+       <%= f.text_field :phone,{:class => "form-control",:placeholder => "Contact Number",:required => true}%>
     </p>
     <p>      
-      Password:</br> <%= f.password_field :password%>
+       <%= f.password_field :password,{:class => "form-control",:placeholder => "Password",:required => true}%>
     </p>
 
     <p>     
-      Password Confirmation:</br> <%= f.password_field :password_confirmation%>
+       <%= f.password_field :password_confirmation,{:class => "form-control",:placeholder => "Password Confirmation",:required => true}%>
     </p>
 
-    <%= f.submit :Signup %>
+    <%= f.submit :Signup,:class => "btn btn-success center1" %>
   <% end %>
 
   <% if @user.errors.any? %>
@@ -36,4 +36,5 @@
 	  	<% end %>
 	</ul>
   <% end %>
+</div>
 </div>

@@ -9,7 +9,9 @@
    <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
    <![endif]-->
-
+<script> $('.navbar-toggle').on('click', function() {
+  $('.after-navbar').css('margin-top','230px');
+});</script>
 </head>
 <body>
 	<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
@@ -22,13 +24,12 @@
 			            <span class="icon-bar"></span>
 			            <span class="icon-bar"></span>
 	          		</button>
-	          		<a class="navbar-brand" id="logo" href="login">Project name</a>
+	          		<a class="navbar-brand" id="logo" href="login">ProjectX</a>
+	          		
 	       		</div>
        		 	
 	        	<div class="collapse navbar-collapse">
-	        		<div>
-			      		<p class="navbar-text cuscol">Some Text</p>
-			  		</div>
+	        		<a href="login"> <img src="/assets/aiesec2.png"></a>
 					<%if ! session[:user_id]%>
 						<ul class="nav navbar-nav pull-right">
 							<li><%= link_to :Signup , :signup, :class => "cuscol"%></li>
@@ -37,14 +38,14 @@
 					<%elsif User.find(session[:user_id]).is_admin == 1%>
 						<ul class="nav navbar-nav pull-right">
 							<li><%= link_to :Home , :admin, :class => "cuscol"%></li>
-							<li><%= link_to :Jobs , :jobs, :class => "cuscol"%></li>
+							<li><%= link_to :Projects , :jobs, :class => "cuscol"%></li>
 							<li><%= link_to :Logout , :logout, :class => "cuscol"%></li>	
 						</ul>
 					<%else%>
 						<ul class="nav navbar-nav pull-right">
 							<li><%= link_to :Home , :home, :class => "cuscol"%></li>
 							<li><%= link_to :Profile , :profile, :class => "cuscol"%></li>
-							<li><%= link_to :Jobs , :jobs_user, :class => "cuscol"%></li>
+							<li><%= link_to :Projects , :jobs_user, :class => "cuscol"%></li>
 							<li><%= link_to :Logout , :logout, :class => "cuscol"%></li>	
 						</ul>
 					<%end%>
@@ -52,7 +53,7 @@
 	    	</div>
 	    </div>
 	</div>
-		
+	<div style="padding-top: 20px"></div>
 	<div class="container marketing">
 		<% if flash[:color]== "valid" %>
 			<div class="alert alert-success">
@@ -72,7 +73,7 @@
 		<hr class="featurette-divider">
 		<footer>
 		    <p class="pull-right"><a href="#">Back to top</a></p>
-		    <p>&copy; 2014 Company, Inc. &middot; </p>
+		    <a href="login"> <img src="/assets/cim.jpg" style="padding-bottom: 20px; margin-top: -50px"></a>
 		</footer>
 
 	</div>

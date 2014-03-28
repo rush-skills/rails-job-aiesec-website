@@ -1,7 +1,7 @@
 <%= form_for(@job) do |f| %>
   <% if @job.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this project from being saved:</h2>
 
       <ul>
       <% @job.errors.full_messages.each do |msg| %>
@@ -13,45 +13,46 @@
 
   <div class="field">
     <%= f.label :project_name %><br />
-    <%= f.text_field :project_name %>
+    <%= f.text_field :project_name,{:class => "form-control",:placeholder => "Project Name",:required => true} %>
   </div>
   <div class="field">
     <%= f.label :country %><br />
-    <%= f.text_field :country %>
+    <%= f.text_field :country,{:class => "form-control",:placeholder => "Country",:required => true} %>
   </div>
   <div class="field">
     <%= f.label :start_date %><br />
-    <%= f.text_field :start_date %>
+    <%= f.text_field :start_date,{:class => "form-control",:placeholder => "Start Date",:required => true} %>
   </div>
   <div class="field">
     <%= f.label :end_date %><br />
-    <%= f.text_field :end_date %>
+    <%= f.text_field :end_date,{:class => "form-control",:placeholder => "End Date",:required => true} %>
   </div>
   <div class="field">
     <%= f.label :brief_description %><br />
-    <%= f.text_area :brief_description %>
+    <%= f.text_area :brief_description,{:class => "form-control",:placeholder => "Breif Description",:required => true} %>
   </div>
   <div class="field">
-    <%= f.label :job_description %><br />
-    <%= f.text_area :job_description %>
+    <%= f.label :project_description %><br />
+    <%= f.text_area :job_description,{:class => "form-control",:placeholder => "Project Description",:required => true} %>
   </div>
   <div class="field">
     <%= f.label :work_information %><br />
-    <%= f.text_area :work_information %>
+    <%= f.text_area :work_information,{:class => "form-control",:placeholder => "Work Information",:required => true} %>
   </div>
   <div class="field">
     <%= f.label :skills %><br />
-    <%= f.text_area :skills %>
+    <%= f.text_area :skills,{:class => "form-control",:placeholder => "Skills",:required => true} %>
   </div>
   <div class="field">
     <%= f.label :language %><br />
-    <%= f.text_field :language %>
+    <%= f.text_field :language,{:class => "form-control",:placeholder => "Language",:required => true} %>
   </div>
   <div class="field">
     <%= f.label :other_details %><br />
-    <%= f.text_area :other_details %>
+    <%= f.text_area :other_details,{:class => "form-control",:placeholder => "Other Details",:required => true} %>
   </div>
+  <br/>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit nil, :class => "btn btn-success" %>
   </div>
 <% end %>
