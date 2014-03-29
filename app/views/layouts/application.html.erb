@@ -17,6 +17,7 @@
 	<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
 		<div class="navbar-inner">
 	    	<div class="container ">
+	    		<a href="login"> <img src="/assets/aiesec4.png" class="img-responsive"></a>
 	      		<div class="navbar-header">
 	      			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 	      			    <span class="sr-only">Toggle navigation</span>
@@ -24,12 +25,13 @@
 			            <span class="icon-bar"></span>
 			            <span class="icon-bar"></span>
 	          		</button>
+
 	          		<a class="navbar-brand" id="logo" href="login">ProjectX</a>
 	          		
 	       		</div>
        		 	
 	        	<div class="collapse navbar-collapse">
-	        		<a href="login"> <img src="/assets/aiesec2.png"></a>
+	        		
 					<%if ! session[:user_id]%>
 						<ul class="nav navbar-nav pull-right">
 							<li><%= link_to :Signup , :signup, :class => "cuscol"%></li>
@@ -53,7 +55,7 @@
 	    	</div>
 	    </div>
 	</div>
-	<div style="padding-top: 20px"></div>
+	<div style="padding-top: 100px"></div>
 	<div class="container marketing">
 		<% if flash[:color]== "valid" %>
 			<div class="alert alert-success">
@@ -72,8 +74,7 @@
 
 		<hr class="featurette-divider">
 		<footer>
-		    <p class="pull-right"><a href="#">Back to top</a></p>
-		    <a href="login"> <img src="/assets/cim.jpg" style="padding-bottom: 20px; margin-top: -50px"></a>
+		    <div style="margin: 0 auto 0 auto;text-align: center"><a href="login"> <img src="/assets/cim.jpg" style="padding-bottom: 20px; margin-top: -50px"></a></div>
 		</footer>
 
 	</div>
