@@ -1,50 +1,32 @@
 <p id="notice"><%= notice %></p>
 
+<div class="jumbotron" style="padding: 20px;">
 <p>
-  <b>Project name:</b>
-  <%= @job.project_name %>
+  <h2 style="font-weight: 200;"><%= @job.project_name %></h2>
 </p>
+</div>
 
-<p>
-  <b>Country:</b>
-  <%= @job.country %>
-</p>
+<div style="background-image: linear-gradient(to bottom,#f2dede 0,#e7c3c3 100%); background-color: #fcf8f2; border-left: 3px solid #f0ad4e; padding: 20px; color: black; ">
+    <%= @job.country %>
+</div>
 
-<p>
-  <b>Start date:</b>
-  <%= @job.start_date %>
-</p>
+<div style="background-image: linear-gradient(to bottom,#dff0d8 0,#c8e5bc 100%); border-left: 3px solid #f0ad4e; padding: 20px; color: black;">
+    <%= @job.start_date %> -  <%= @job.end_date %>
+</div>
 
-<p>
-  <b>End date:</b>
-  <%= @job.end_date %>
-</p>
+<div style="background-color: #fcf8f2; border-left: 3px solid #f0ad4e; padding: 20px; color: black;">
+  <strong>Brief Description</strong>: <%= @job.brief_description %>
+</div>
 
-<p>
-  <b>Brief description:</b>
-  <%= @job.brief_description %>
-</p>
 
-<p>
-  <b>Project description:</b>
-  <%= @job.job_description %>
-</p>
+<div style="background-color: #fcf8f2; border-left: 3px solid #f0ad4e;  padding: 20px; color: black;">
+  <strong>Work Description</strong>: <%= @job.work_information %>
+</div>
 
-<p>
-  <b>Work information:</b>
-  <%= @job.work_information %>
-</p>
-
-<p>
-  <b>Skills:</b>
-  <%= @job.skills %>
-</p>
-
-<p>
+<div style="background-image: linear-gradient(to bottom,#f2dede 0,#e7c3c3 100%); border-left: 3px solid #f0ad4e; padding: 20px; color: black;">
   <b>Language:</b>
   <%= @job.language %>
-</p>
-
+</div>
 <p>
   <b>Other details:</b>
   <%= @job.other_details %>

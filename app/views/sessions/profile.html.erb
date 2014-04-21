@@ -1,15 +1,25 @@
-<h2 class='User_Header'><%=@ofuser.username%> Profile </h2>
-	<h3>Name: <%=@ofuser.name%> </h3>
-	<h3>User Name: <%=@ofuser.username%> </h3>
-	<h3>Contact Number: <%=@ofuser.phone%> </h3>
-	<h3>Ep ID: <%=@ofuser.ep_id%> </h3>
-	<h3>Email ID: <%=@ofuser.email%> </h3>
-	<h2>Listing of all Projects applied</h4>
-	<% for i in 0...@job_ar.length()%>
-	<% x = @job_ar[i] %>
-	<h4>Project name: <%=x.project_name%> </h4>
-	<h4>Project Country: <%=x.country%> </h4>
-	<h4>End date: <%=x.end_date%> </h4>
-	<h4>Apply date: <%=@appdate[i]%> </h4>
-	<h4> ----- </h4>
-	<% end %>
+<div>
+	<div style="background-color: #fcf8f2; border-left: 3px solid #f0ad4e;; margin: 20px 0; padding: 20px; color: black;">
+		<h2 style="color: #f0ad4e;"><%=@ofuser.name%>'s Profile</h2>
+		<hr/>
+		<address>
+	  		<strong><%=@ofuser.username%></strong><br>
+	  	 	<a href="mailto:<%=@ofuser.email%>"><%=@ofuser.email%></a>
+	  		<br>
+	  		<abbr title="Phone">P:</abbr> <%=@ofuser.phone%>
+	  		<br/>
+			Under EP ID: <strong><%=@ofuser.ep_id%></strong>
+		</address>
+	</div>
+	<div>
+		<h2>Listing of all Projects applied</h4>
+		<% for i in 0...@job_ar.length()%>
+		<% x = @job_ar[i] %>
+		<h4>Project name: <%=x.project_name%> </h4>
+		<h4>Project Country: <%=x.country%> </h4>
+		<h4>End date: <%=x.end_date%> </h4>
+		<h4>Apply date: <%=@appdate[i]%> </h4>
+		<h4> ----- </h4>
+		<% end %>
+	</div>
+</div>
