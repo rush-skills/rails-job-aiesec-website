@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
 			y = Job.find(:first, :conditions => {:id => x})
 			@job_ar.push(y) unless y.nil?
 			k = y.applicants.length() unless y.nil?
-			k = y.applicants.length() if y.nil?
+			k = 0 if y.nil?
 			for i in 0...k
 				if y.applicants[i] == @ofuser.id
 					@appdate.push(y.apply_date[i])
