@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140509075038) do
+ActiveRecord::Schema.define(:version => 20140509092605) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(:version => 20140509075038) do
     t.string   "phone"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.integer  "login_status"
+    t.string   "match_status"
   end
 
 end

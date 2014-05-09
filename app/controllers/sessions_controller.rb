@@ -9,6 +9,9 @@ class SessionsController < ApplicationController
 	end
 	def home
 		#Home Page
+		if current_user.is_admin
+			redirect_to(:controller => 'activities', :action => 'index')
+		end
 	end
 
 	def profile
@@ -50,14 +53,21 @@ class SessionsController < ApplicationController
 	def login_attempt
 		authorized_user = User.authenticate(params[:username_or_email],params[:login_password])
 		if authorized_user
-			session[:user_id] = authorized_user.id
-			flash[:notice] = "Wow Welcome again, you logged in as #{authorized_user.username}"
-			if authorized_user.is_admin == 1
-				redirect_to(:controller => 'activities', :action => 'index')
+			if authorized_user.login_status == 1
+				session[:user_id] = authorized_user.id
+				flash[:notice] = "Wow Welcome again, you logged in as #{authorized_user.username}"
+				flash[:color]= "valid"
+				if authorized_user.is_admin == 1
+					redirect_to(:controller => 'activities', :action => 'index')
+				else
+					redirect_to(:action => 'home')
+				end
 			else
-				redirect_to(:action => 'home')
+				flash[:notice] = "Please wait while the admin confirms your application."
+				flash[:color]= "invalid"
+				render "login"
 			end
-
+ 
 
 		else
 			flash[:notice] = "Invalid Username or Password"

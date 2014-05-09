@@ -7,3 +7,11 @@
 	</p>
 	<% end %>
 <% end %>
+<h1>New User Signups</h1>
+<% @users.each do |u| %>
+<p class="alert alert-info">
+<%= link_to u.username,controller: "sessions", action: "profile", id: u.id if u %> signed up.
+
+<%= link_to "Validate",{controller: "users", action: "enable", id: u.id },:class=>"btn btn-primary" if u%> 
+</p>
+<% end %>
