@@ -1,0 +1,31 @@
+<h1 style="font-weight: 200; margin-left: 100px;">List of all the active projects</h1>
+<br/>
+
+<table class="flat-table flat-table-1 center">
+    <thead>
+  <tr>
+    <th>Name</th>
+    <th>User Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>EP ID</th>
+    <th>State</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.username %></td>
+    <td><%= user.email %></td>
+    <td><%= user.phone %></td>
+    <td><%= user.ep_id %></td>
+    <td><%= user.match_status %></td>
+    <td><%= link_to "Profile",{controller: "sessions", action: "profile", id: user.id },:class=>"btn btn-primary" if user%> </td>
+    <td><% if user.is_admin==1 %><%= link_to 'Remove Admin', {controller: "users", action: "make_admin", id: user.id },:class=>"btn btn-danger" if user%> <%else%> <%= link_to 'Make Admin', {controller: "users", action: "make_admin", id: user.id },:class=>"btn btn-warning" if user%> <% end %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
