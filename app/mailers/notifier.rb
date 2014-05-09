@@ -9,8 +9,8 @@ class Notifier < ActionMailer::Base
   end
   def send_admin_email(user)
     @user = user
-    mail( :to => User.where(username: "ankur").email,
-    :subject => 'Thanks for signing up for our amazing app' )
+    mail( :to => User.find_by_username("ankur").email,
+    :subject => 'New User Signed Up for EP Engagement Tool' )
   end
   def send_confirmation_email(user)
     @user = user
