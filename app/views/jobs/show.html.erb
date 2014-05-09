@@ -1,39 +1,46 @@
 <p id="notice"><%= notice %></p>
+<% if @job.status != 1 || current_user.is_admin %>
 
-<div class="jumbotron" style="padding: 20px;">
-<p>
-  <h2 style="font-weight: 200;"><%= @job.project_name %></h2>
-</p>
+<div>
+
+  <h1>Project Name: <%= @job.project_name %></h1>
+
 </div>
 
-<div style="background-image: linear-gradient(to bottom,#f2dede 0,#e7c3c3 100%); background-color: #fcf8f2; border-left: 3px solid #f0ad4e; padding: 20px; color: black; ">
-    <%= @job.country %>
+<div >
+    <h3>Job Country: <%= @job.country %></h3>
 </div>
 
-<div style="background-image: linear-gradient(to bottom,#dff0d8 0,#c8e5bc 100%); border-left: 3px solid #f0ad4e; padding: 20px; color: black;">
-    <%= @job.start_date %> -  <%= @job.end_date %>
+<div >
+    <h3> Dates <%= @job.start_date %> -  <%= @job.end_date %> </h3>
 </div>
 
-<div style="background-color: #fcf8f2; border-left: 3px solid #f0ad4e; padding: 20px; color: black;">
-  <strong>Brief Description</strong>: <%= @job.brief_description %>
+<div >
+  <h3><strong>Brief Description</strong>:<br/> <%= @job.brief_description %></h3>
 </div>
 
 
-<div style="background-color: #fcf8f2; border-left: 3px solid #f0ad4e;  padding: 20px; color: black;">
-  <strong>Work Description</strong>: <%= @job.work_information %>
+<div >
+  <h3><strong>Work Description</strong>: <%= @job.work_information %></h3>
 </div>
 
-<div style="background-image: linear-gradient(to bottom,#f2dede 0,#e7c3c3 100%); border-left: 3px solid #f0ad4e; padding: 20px; color: black;">
-  <b>Language:</b>
-  <%= @job.language %>
+<div >
+  <h3><b>Language:</b>
+  <%= @job.language %></h3>
 </div>
-<p>
-  <b>Other details:</b>
-  <%= @job.other_details %>
-</p>
-
+<div >
+  <h3><b>Other details:</b>
+  <%= @job.other_details %></h3>
+</div>
+<% else %>
+<p> The job you are looking for does not exist or has been removed from by the admin </p>
+<% end %>
 <% if @current_user.is_admin %>
+<p> Status = <% if @job.status == 1 %> Deleted Job <% else %> Active Job <% end %> </p>
 <%= link_to 'Back', :controller => "jobs", :action => "index" %>
+<% if @job.status == 1 %>
+<%= link_to 'Restore Delted Job', :controller => "jobs", :action => "restore" ,id: @job.id%>
+<% end %>
 <% else %>
 <%= link_to 'Back', :controller => "jobs", :action => "index_user" %>
 <% end %>

@@ -24,13 +24,13 @@
     <td><%= job.language %></td>
     <td><%= link_to 'Show', job, :class => "btn btn-sm btn-info" %></td>
     <td><%= link_to 'Edit', edit_job_path(job), :class => "btn btn-sm btn-warning" %></td>
-    <td><%= link_to 'Destroy', job, confirm: 'Are you sure?', method: :delete, :class => "btn btn-sm btn-danger" %></td>
+    <td><% if job.status !=1 %><%= link_to 'Destroy', {controller: :jobs, action: :del, id: job.id},:class => "btn btn-sm btn-danger" %><% else %> <%= link_to 'Restore', {controller: :jobs, action: :restore, id: job.id},:class => "btn btn-sm btn-danger" %> <% end %></td>
   </tr>
 <% end %>
 </tbody>
 </table>
 
 <br />
-<div align="right" style="margin-right: 100px;">
+<div align="center" class="center center1">
 <%= link_to 'New Project', new_job_path, :class => "btn btn-lg btn-primary center1" %>
 </div>

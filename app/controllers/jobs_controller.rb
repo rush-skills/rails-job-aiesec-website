@@ -53,7 +53,7 @@ class JobsController < ApplicationController
   # POST /jobs.json
   def create
     @job = Job.new(params[:job])
-
+    @job.status = 0
     respond_to do |format|
       if @job.save
         format.html { redirect_to @job, notice: 'Job was successfully created.' }
@@ -85,14 +85,32 @@ class JobsController < ApplicationController
   # DELETE /jobs/1.json
   def destroy
     @job = Job.find(params[:id])
-    @job.destroy
+    @job.status = 1
+    @job.save
+    redirect_to jobs
+    # @job.destroy
 
-    respond_to do |format|
-      format.html { redirect_to jobs_url }
-      format.json { head :no_content }
-    end
+    # respond_to do |format|
+    #   format.html { redirect_to jobs_url }
+    #   format.json { head :no_content }
+    # end
   end
-  def apply
-  
+  def del
+    @job = Job.find(params[:id])
+    @job.status = 1
+    @job.save
+    redirect_to Job
+    # @job.destroy
+
+    # respond_to do |format|
+    #   format.html { redirect_to jobs_url }
+    #   format.json { head :no_content }
+    # end
+  end
+  def restore
+    @job = Job.find(params[:id])
+    @job.status = 0
+    @job.save
+    redirect_to Job
   end
 end

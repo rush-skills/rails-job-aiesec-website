@@ -1,7 +1,9 @@
 <h1>Activities</h1>
 <% @activities.each do |activity| %>
+	<% if activity.owner.is_admin != 1 %> 
 	<p class="alert alert-success">
 	<%= link_to activity.owner.username,controller: "sessions", action: "profile", id: activity.owner.id if activity.owner %> applied to 
 	<%= link_to activity.trackable.project_name , activity.trackable if activity.trackable %>
 	</p>
+	<% end %>
 <% end %>
