@@ -1,5 +1,5 @@
 class Notifier < ActionMailer::Base
-  default :from => "ror1github@gmail.com"
+  default :from => "projectx.aiesec@gmail.com"
 
   # send a signup email to the user, pass in the user object that   contains the user's email address
   def send_signup_email(user)
@@ -9,7 +9,7 @@ class Notifier < ActionMailer::Base
   end
   def send_admin_email(user)
     @user = user
-    mail( :to => User.find_by_username("ankur").email,
+    mail( :to => 'projectx.aiesec@gmail.com',
     :subject => 'New User Signed Up for EP Engagement Tool' )
   end
   def send_confirmation_email(user)
